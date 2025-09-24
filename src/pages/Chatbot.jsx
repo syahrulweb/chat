@@ -12,6 +12,10 @@ export default function Chatbot() {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  const API_URL = import.meta.env.DEV
+    ? "http://localhost:3000"
+    : "https://chatbot-backend-nine-omega.vercel.app";
+
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -21,7 +25,7 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/api/chat", {
+      const res = await fetch(`${API_URL}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
