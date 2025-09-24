@@ -1,6 +1,6 @@
 // src/components/ChatbotWidget.jsx
 import { useState } from "react";
-import Chat from "../pages/Chatbot";
+import Chatbot from "../pages/Chatbot";
 
 export default function ChatbotWidget() {
   const [open, setOpen] = useState(false);
@@ -16,7 +16,7 @@ export default function ChatbotWidget() {
           borderRadius: "10px",
           boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
         }}>
-          <Chat />
+          <Chatbot />
         </div>
       )}
       <button 

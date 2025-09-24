@@ -3,7 +3,7 @@ import Beranda from "./pages/Beranda";
 import Jadwal from "./pages/Jadwal";
 import Modul from "./pages/Modul";
 import Absen from "./pages/Absen";
-import Chatbot from "../pages/Chatbot";
+import Chatbot from "./pages/Chatbot"; // ✅ perbaiki path
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ChatbotWidget from "./components/ChatbotWidget";
@@ -18,7 +18,7 @@ function App() {
           <Route path="/jadwal" element={<Jadwal />} />
           <Route path="/modul" element={<Modul />} />
           <Route path="/absen" element={<Absen />} />
-          <Route path="/chatbot" element={<Chatbot />} /> {/* ✅ konsisten */}
+          <Route path="/chatbot" element={<Chatbot />} />
         </Routes>
       </main>
       <Footer />
