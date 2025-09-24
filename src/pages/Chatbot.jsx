@@ -1,7 +1,6 @@
-// pages/Chat.jsx
 import { useState, useRef, useEffect } from "react";
 
-export default function Chat() {
+export default function Chatbot() {
   const [messages, setMessages] = useState([
     { sender: "bot", text: "💬 Hai, aku chatbot. Mau nanya apa?" },
   ]);

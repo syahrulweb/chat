@@ -1,6 +1,5 @@
-// src/components/ChatbotWidget.jsx
 import { useState } from "react";
-import Chatbot from "../pages/Chatbot";
+import Chatbot from "../pages/Chatbot"; // ✅ konsisten
 
 export default function ChatbotWidget() {
   const [open, setOpen] = useState(false);
