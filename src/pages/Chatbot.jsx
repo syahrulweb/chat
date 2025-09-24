@@ -8,13 +8,10 @@ export default function Chatbot() {
   const [loading, setLoading] = useState(false);
   const chatEndRef = useRef(null);
 
+  // auto scroll ke bawah tiap ada pesan baru
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
-  const API_URL = import.meta.env.DEV
-    ? "http://localhost:3000"
-    : "https://chatbot-backend-nine-omega.vercel.app";
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -25,7 +22,7 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_URL}/api/chat`, {
+      const res = await fetch("https://chatbot-backend-nine-omega.vercel.app/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
@@ -36,7 +33,8 @@ export default function Chatbot() {
         ...prev,
         { sender: "bot", text: data.reply || "⚠️ Error dari bot" },
       ]);
-    } catch {
+    } catch (err) {
+      console.error(err);
       setMessages((prev) => [
         ...prev,
         { sender: "bot", text: "⚠️ Gagal connect ke backend" },
