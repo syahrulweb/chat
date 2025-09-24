@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://chatbot-backend-nine-omega.vercel.app',
+        target: 'hhttps://chatbot-backend-nine-omega.vercel.app/api/chat',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
