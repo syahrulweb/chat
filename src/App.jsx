@@ -3,7 +3,7 @@ import Beranda from "./pages/Beranda";
 import Jadwal from "./pages/Jadwal";
 import Modul from "./pages/Modul";
 import Absen from "./pages/Absen";
-import Chatbot from "./pages/Chatbot"; // ✅ konsisten
+import Chatbot from "../pages/Chatbot";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ChatbotWidget from "./components/ChatbotWidget";
